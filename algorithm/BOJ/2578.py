@@ -1,3 +1,4 @@
+# 줄마다 빙고인지 확인하기, 빙고면 b에다가 추가해서 리턴
 def check(li):
     b = 0
     # 가로
@@ -27,6 +28,7 @@ def check(li):
 bingo = [list(map(int, input().split())) for _ in range(5)]
 bingo_x = [list(map(int, input().split())) for _ in range(5)]
 
+# 철수꺼 사회자꺼 비교
 def check_bingo(li1, li2):
     cnt = 0
     for i in range(5):
@@ -34,9 +36,9 @@ def check_bingo(li1, li2):
             cnt += 1
             for k in range(5):
                 for l in range(5):
-                    if li2[i][j] == li1[k][l]:
+                    if li2[i][j] == li1[k][l]:  # 사회자꺼가 철수꺼에 있으면 0으로 바꿈
                         li1[k][l] = 0
-            clear = check(li1)
+            clear = check(li1)                  # 0으로 바꾸고 빙고가 몇개 있는지 확인
             if clear >= 3:
                 return cnt
 
