@@ -20,17 +20,15 @@ def check(li):
     c_y = 0
     for i in range(5):
         c_x += li[i][i]
-        c_y += li[i][-i-1]
+        c_y += li[i][-i-1]      # 인덱스 -순회로 뒤부터
     if c_x == 0: b += 1
     if c_y == 0: b += 1
+    
     return b
     
-bingo = [list(map(int, input().split())) for _ in range(5)]
-bingo_x = [list(map(int, input().split())) for _ in range(5)]
-
 # 철수꺼 사회자꺼 비교
 def check_bingo(li1, li2):
-    cnt = 0
+    cnt = 0                     # 정답용 카운트
     for i in range(5):
         for j in range(5):
             cnt += 1
@@ -40,8 +38,12 @@ def check_bingo(li1, li2):
                         li1[k][l] = 0
             clear = check(li1)                  # 0으로 바꾸고 빙고가 몇개 있는지 확인
             if clear >= 3:
+                
                 return cnt
 
+# input
+bingo = [list(map(int, input().split())) for _ in range(5)] # 철수
+bingo_x = [list(map(int, input().split())) for _ in range(5)] # 사회자
 print(check_bingo(bingo, bingo_x))
 
 
