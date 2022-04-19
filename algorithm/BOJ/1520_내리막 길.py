@@ -3,6 +3,8 @@ sys.setrecursionlimit(10000)
 
 dr = (-1, 1, 0, 0)
 dc = (0, 0, -1, 1)
+
+
 def DFS(r, c):
 
     if r == tr and c == tc:
@@ -21,7 +23,6 @@ def DFS(r, c):
     
     return dp[r][c]
 
-                
 
 N, M = map(int, input().split())
 arr = [list(map(int, sys.stdin.readline().rstrip().split())) for _ in range(N)]
