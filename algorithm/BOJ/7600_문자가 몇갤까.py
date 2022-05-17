@@ -1,6 +1,3 @@
-from msilib import text
-
-
 while True:
     t = input()
     if t == '#':
